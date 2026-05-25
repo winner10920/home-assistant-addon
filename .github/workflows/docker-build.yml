@@ -8,12 +8,7 @@ on:
     tags:
       - 'v*'
     paths:
-      - 'pironman/**'
       - 'pironman5/**'
-      - 'pironman5-max/**'
-      - 'pironman5-mini/**'
-      - 'pironman5-nas/**'
-      - 'pironman5-ups/**'
       - 'pi-config-wizard/**'
       - '.github/workflows/docker-build.yml'
   pull_request:
