@@ -8,9 +8,9 @@ RUN apt-get update
 RUN apt-get install git python3 python3-pip python3-setuptools procps -y
 
 # add github branch ref to invalidating the docker cache.
-ADD https://api.github.com/repos/sunfounder/pironman/git/refs/heads/v2.0 version.json
+ADD https://api.github.com/repos/winner10920/pironman/git/refs/heads/v2.0 version.json
 # clone pironman
-RUN git clone -b v2.0 --depth 1 https://github.com/sunfounder/pironman.git
+RUN git clone -b v2.0 --depth 1 https://github.com/winner10920/pironman.git
 
 # install pironman
 RUN cd /pironman && python3 install.py --skip-config-txt --skip-auto-startup --skip-reboot
