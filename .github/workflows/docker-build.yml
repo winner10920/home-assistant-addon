@@ -89,7 +89,7 @@ jobs:
           IMAGE=$(grep '^image:' "${ADDON}/config.yaml" 2>/dev/null | sed 's/image: *//' | tr -d '"' || echo "")
           
           if [ -z "$IMAGE" ]; then
-            IMAGE="sunfounder/{arch}-${SLUG}"
+            IMAGE="winner10920/{arch}-${SLUG}"
           fi
           
           echo "version=${VERSION}" >> $GITHUB_OUTPUT
