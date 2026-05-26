@@ -18,10 +18,15 @@ RUN cd /pironman5 && python3 install.py --skip-auto-start --skip-reboot --skip-d
 
 
 # uninstall rpi.gpio
-RUN /opt/pironman5/venv/bin/pip uninstall RPi.GPIO -y
+#RUN /opt/pironman5/venv/bin/pip uninstall RPi.GPIO -y
 # # install rpi.lgpio instead
-RUN /opt/pironman5/venv/bin/pip install rpi.lgpio
+#RUN /opt/pironman5/venv/bin/pip install rpi.lgpio
 # RUN pip install rpi.lgpio --break
+
+# Uninstall the broken RPi.GPIO and replace it with the Pi 5 compatible rpi-lgpio
+RUN /opt/pironman5/venv/bin/pip3 uninstall -y RPi.GPIO || true
+RUN /opt/pironman5/venv/bin/pip3 install rpi-lgpio
+
 
 # downgrade adafruit-blinka to 8.55.0
 RUN /opt/pironman5/venv/bin/pip install adafruit-blinka==8.55.0
