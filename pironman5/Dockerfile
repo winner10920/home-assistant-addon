@@ -22,10 +22,11 @@ RUN cd /pironman5 && python3 install.py --skip-auto-start --skip-reboot --skip-d
 # # install rpi.lgpio instead
 #RUN /opt/pironman5/venv/bin/pip install rpi.lgpio
 # RUN pip install rpi.lgpio --break
-
-# Uninstall the broken RPi.GPIO and replace it with the Pi 5 compatible rpi-lgpio
+# Uninstall the broken Broadcom library
 RUN /opt/pironman5/venv/bin/pip3 uninstall -y RPi.GPIO || true
-RUN /opt/pironman5/venv/bin/pip3 install rpi-lgpio
+# Force reinstall the Pi 5 library to restore the missing RPi folder
+RUN /opt/pironman5/venv/bin/pip3 install --force-reinstall --no-cache-dir rpi-lgpio
+
 
 
 # downgrade adafruit-blinka to 8.55.0
