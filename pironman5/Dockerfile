@@ -16,10 +16,11 @@ RUN git clone https://github.com/winner10920/pironman5.git
 # install pironman
 RUN cd /pironman5 && python3 install.py --skip-auto-start --skip-reboot --skip-dtoverlay --skip-modules --plain-text
 
+
 # uninstall rpi.gpio
-# RUN /opt/pironman5/venv/bin/pip uninstall RPi.GPIO -y
+RUN /opt/pironman5/venv/bin/pip uninstall RPi.GPIO -y
 # # install rpi.lgpio instead
-# RUN /opt/pironman5/venv/bin/pip install rpi.lgpio
+RUN /opt/pironman5/venv/bin/pip install rpi.lgpio
 # RUN pip install rpi.lgpio --break
 
 # downgrade adafruit-blinka to 8.55.0
