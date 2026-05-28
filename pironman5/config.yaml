@@ -41,4 +41,4 @@ schema:
   mqtt_username: str?
   mqtt_password: password?
 full_access: true
-
+udev: true
